@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
+    <title>Frontend Mentor | Mortgage repayment calculator</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution { font-size: 11px; text-align: center; }
+      .attribution a { color: hsl(228, 45%, 44%); }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="inputSection">
+        <div class="Head">
+          <h1>Mortgage Calculator</h1>
+          <span class="clearAll">Clear All</span>
+        </div>
+        <form id="mortgage-form">
+          <div class="loanAmount">
+            <label for="loan-amount"> Mortgage Amount</label>
+            <div class="amountInputCover">
+              <div class="amountIcon">£</div>
+              <input type="number" id="loan-amount" />
+            </div>
+            <div class="errorAmount none">This field is required</div>
+          </div>
+          <div class="loanTerm">
+            <label for="loan-term"> Mortgage Term</label>
+            <div class="loanTermCover">
+              <input type="number" id="loan-term" />
+              <div class="YearIcon">Year</div>
+            </div>
+            <div class="errorTerm none">This field is required</div>
+          </div>
+          <div class="interestRate">
+            <label for="interest-rate"> Interest Rate</label>
+            <div class="interestIconCover">
+              <input type="number" id="interest-rate" />
+
+              <div class="interestIcon">%</div>
+            </div>
+            <div class="errorRate none">This field is required</div>
+          </div>
+          <div class="paymentType">
+            <label>Mortgage Type</label>
+            <div class="radio-group">
+              <label class="repaymentRadio">
+                <div class="radiosRp">
+                  <div></div>
+                </div>
+                Repayment
+              </label>
+              <label class="interesttRadio">
+                <div class="radiosIo">
+                  <div></div>
+                </div>
+                Interest Only
+              </label>
+            </div>
+            <div class="errorType none">This field is required</div>
+          </div>
+
+          <button type="button" id="calculate-btn"><img src="assets/images/icon-calculator.svg" alt=""> <div>Calculate  <span class="calcType"></span></div></span></button>
+        </form>
+      </div>
+      <div class="resultSection">
+        <div class="empty">
+          <img src="assets/images/illustration-empty.svg" alt="">
+          <h1 class="emptyHead">Results shown here</h1>
+          <P class="emptyPara">  Complete the form and click “calculate repayments” to see what 
+            your monthly repayments would be.</P>
+        </div>
+        <div class="completed none">
+          <h1 class="completedHead">
+            Your results
+          </h1>
+          <p class="completedPara">
+            Your results are shown below based on the information you provided. 
+  To adjust the results, edit the form and click “calculate repayments” again.
+          </p>
+          <div class="amountBox">
+            <div class="amountCover">
+
+              <div class="amountCont">
+                <div class="mrTitle">
+                  Your monthly repayments
+                </div>
+                <h1 class="amount">£<span class="amountData"></span>5000</h1>
+              </div>
+              <div class="trCont">
+
+                <div class="tr">
+                  Total you'll repay over the term 
+                </div>
+                <h2 class="trAmount">
+                  £<span class="trAmountData">5000</span>
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </main>
+    <!-- 
+  
+
+ 
+
+ 
+
+ 
+
+  
+  Repayment
+  Interest Only
+
+  Calculate Repayments -->
+
+    <!-- Empty results start -->
+
+    <!-- 
+
+ -->
+
+    <!-- Empty results end -->
+
+    <!-- Completed results start -->
+
+    <!-- 
+
+  
+
+  
+
+-->
+
+    <!-- Completed results end -->
+
+    <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+  <script src="assets/app.js"></script>
+  </body>
+</html>

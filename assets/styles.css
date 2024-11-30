@@ -1,0 +1,474 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    /* Primary Colors */
+    --lime: hsl(61, 70%, 52%);
+    --red: hsl(4, 69%, 50%);
+
+    /* Neutral Colors */
+    --white: hsl(0, 0%, 100%);
+    --slate-100: hsl(202, 86%, 94%);
+    --slate-300: hsl(203, 41%, 72%);
+    --slate-500: hsl(200, 26%, 54%);
+    --slate-700: hsl(200, 24%, 40%);
+    --slate-900: hsl(202, 55%, 16%);
+}
+body{
+    font-family: "Plus Jakarta Sans", serif;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--slate-100);
+}
+main{
+    height: auto;
+    overflow: hidden;
+    border-radius: 25px;
+    display: flex;
+    width: 80%;
+    background-color: var(--white);
+}
+.inputSection{
+width: 50%;
+height: 100%;
+}
+.resultSection{
+    width: 50%;
+    height: 100%;
+    background-color: var(--slate-900);
+    border-bottom-left-radius: 50px;
+}
+.inputSection{
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    gap: 40px;
+}
+.Head{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.Head h1{
+    font-size: 1.4rem;
+
+    font-weight: 700;
+    color: var(--slate-900);
+}
+#mortgage-form{
+    height: auto;
+    row-gap: 20px;
+    column-gap: 10px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    /* padding: 20px; */
+    grid-template-areas: 
+    "l1 l1 l1 l1"
+    "l2 l2 l3 l3"
+    "l4 l4 l4 l4"
+    "l4 l4 l4 l4"
+    "l5 l5 l5 l5"
+    ;
+    
+}
+.loanAmount,
+.interestRate,
+.loanTerm,
+.paymentType{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.loanAmount{
+    grid-area: l1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.amountInputCover{
+    display: flex;
+    color: var(--slate-700);
+    font-weight: 600;
+    font-size: 1.2rem;
+    align-items: center;
+    border: 1.5px solid var(--slate-900);
+    border-radius: 5px;
+    overflow: hidden;
+}
+.amountIcon{
+    width: 15%;
+    background-color: var(--slate-100);
+    height: 100%;
+    color: var(--slate-700);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loanAmount input{
+    height: 50px;
+    width: 85%;
+    padding-inline: 20px;
+    border: none;
+    outline: none;
+
+}
+.loanTerm{
+    grid-area: l2;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.loanTermCover{
+    display: flex;
+    align-items: center;
+    border: 1.5px solid var(--slate-900);
+    border-radius: 5px;
+    overflow: hidden;
+
+}
+.loanTerm input{
+    height: 50px;
+    border: none;
+    outline: none;
+    padding-inline: 20px;
+    width: 65%;
+}
+.YearIcon{
+    width: 35%;
+    color: var(--slate-700);
+    display: flex;
+    background-color: var(--slate-100);
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-weight: 600;
+
+
+}
+.interestRate{
+    grid-area: l3;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.interestIconCover{
+    border: 1px solid var(--slate-900);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+.interestRate input{
+    height: 50px;
+    padding-inline: 20px;
+    font-family: "Plus Jakarta Sans", serif ;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    width: 65%;
+}
+.interestIcon{
+width: 35%;
+color: var(--slate-700);
+font-weight: 700;
+font-size: 1.2rem;
+background-color: var(--slate-100);
+height: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.paymentType{
+    grid-area: l4;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#calculate-btn{
+    grid-area: l5;
+
+}
+.loanAmount input,
+.interestRate input,
+.loanTerm input{
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: "Plus Jakarta Sans", serif;
+  color: var(--slate-900);
+}
+.clearAll{
+    color: var(--slate-900);
+    font-size: 15px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.clearAll:hover{
+    font-size: 16px;
+}
+label{
+    color: var(--slate-500);
+    font-weight: 500;
+    font-size: .95rem;
+    
+}
+.radio-group{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.repaymentRadio,
+.interesttRadio{
+height: 50px;
+width: 100%;
+padding: 20px;
+display: flex;
+gap: 10px;
+font-weight: 700;
+color: var(--slate-900);
+border-radius: 5px;
+align-items: center;
+border: 1px solid var(--slate-900);
+}
+.radiosRp,
+.radiosIo{
+    height: 18px;
+    background-color: var(--white);
+    width: 18px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1.5px solid var(--slate-900);
+}
+.radiosIo div{
+height: 50%;
+width: 50%;
+border-radius: 50%;
+/* background-color: var(--lime); */
+
+}
+.radiosRp div{
+    height: 50%;
+    width: 50%;
+    border-radius: 50%;
+    /* background-color: var(--lime); */
+    
+}
+.selected{
+border-color: var(--lime);
+background-color: hsla(61, 70%, 52%, 0.137);
+}
+
+#calculate-btn{
+    height: 50px;
+    width: 100%;
+    border-radius: 25px;
+    background-color: var(--lime);
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-weight: 700;
+    /* word-spacing: 3px; */
+    color: var(--slate-900);
+    border: none;
+    outline: none;
+    margin-top: 40px;
+    cursor: pointer;
+    font-family:"Plus Jakarta Sans", serif ;
+
+}
+/* .calcType{
+    margin-left: 3px;
+} */
+ .resultSection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+ }
+ .empty{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    font-size: .75rem;
+    color: var(--white);
+    font-weight: 500;
+ } 
+ .emptyPara{
+    text-align: center;
+    font-size: 1rem;
+    color:hsla(0, 0%, 100%, 0.616) ;
+    font-weight: 200;
+    line-height: 1.5;
+ }
+ .completed{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+ }
+ .completedHead{
+    color: var(--white);
+    font-size: 1.8rem;
+
+ }
+ .completedPara{
+    color: hsla(0, 0%, 100%, 0.616);
+    font-size: 17px;
+    line-height: 1.5;
+    font-weight: 300;
+ }
+ .amountBox {
+     width: 100%;
+     margin-top: 30px;
+    height: auto;
+    border-top: 6px solid var(--lime);
+    border-radius: 12px;
+    /* background-color: var(--lime); */
+    display: flex;
+    align-items: end;
+}
+.amountCover {
+    padding: 40px;
+    border-radius: 7px;
+    height: 100%;
+    background-color: #0000004d;
+    width: 100%;
+}
+.amountCont{
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-bottom:1px solid rgba(255, 255, 255, 0.253);
+}
+.mrTitle{
+    color:hsla(207, 100%, 98%, 0.788);
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+.amount {
+    color: var(--lime);
+    font-size: clamp(2rem, 5vw, 3.5rem); /* Adjust font size dynamically */
+    font-weight: 700;
+    overflow-wrap: break-word; /* Ensure wrapping for long text */
+    word-wrap: break-word;
+    text-align: center; /* Center align in the box */
+}
+.trCont{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+.tr{
+    color: hsla(207, 100%, 98%, 0.788);
+}
+
+.trAmount {
+    color: var(--white);
+    font-size: clamp(1.5rem, 4vw, 2rem); /* Adjust font size dynamically */
+    font-weight: 700;
+    overflow-wrap: break-word; /* Prevent overflow */
+    word-wrap: break-word;
+    text-align: center;
+}
+.errorAmount,
+.errorTerm,
+.errorRate,
+.errorType{
+    color: var(--red);
+    font-weight:  600;
+    font-size: small;
+}
+/* Mobile responsiveness */
+@media screen and (max-width: 540px) {
+
+    body{
+        height: auto;
+    }
+
+    main {
+        border-radius: 0px;
+        flex-direction: column; /* Stack sections vertically */
+        width: 100%;
+    }
+
+    .inputSection, .resultSection {
+        width: 100%; /* Make sections take full width */
+        height: auto;
+    }
+
+    .inputSection {
+        padding: 20px;
+    }
+
+    .resultSection {
+        border-radius: 0px; /* Bottom-rounded for mobile */
+        padding: 20px; /* Adjust spacing */
+    }
+
+    #mortgage-form {
+        grid-template-columns: 1fr; /* Single-column layout for form */
+        grid-template-areas: 
+        "l1"
+        "l2"
+        "l3"
+        "l4"
+        "l5";
+    }
+
+    .loanAmount, .loanTerm, .interestRate, .paymentType, #calculate-btn {
+        width: 100%; /* Ensure full width */
+    }
+
+    .amountBox {
+        margin-top: 20px; /* Adjust spacing for mobile */
+    }
+
+    .amount {
+        font-size: 2.5rem; /* Reduce font size */
+    }
+
+    .trAmount {
+        font-size: 1.5rem; /* Reduce font size */
+    }
+}
+
+ .none{
+    display: none;
+ }
+
+
+
+
+/* Ensure the parent containers maintain proper padding and height */
+.amountBox, .amountCont {
+    width: 100%;
+    height: auto;
+    /* padding: 10px; */
+    box-sizing: border-box;
+    text-align: center; /* Align text centrally */
+}
+@media(min-width:768px) and (max-width:1025px){
+    main{
+        width: 95%;
+    }
+}
